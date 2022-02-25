@@ -4,7 +4,7 @@ import Exercise from "../models/exercise.model.js";
 const exerciseRouter = express.Router();
 
 exerciseRouter.route('/').get(async(req, res)=>{
-
+  
       try {
             const exercises = await Exercise.find({});
             res.send({exercises});
@@ -19,7 +19,9 @@ exerciseRouter.route('/add').post(async(req, res)=>{
         try {
                 const exercise =  new Exercise({username, description, duration, date});
                 await exercise.save();
+
                 res.send("Exercicio adicionado com sucesso!!");
+                
             } catch(err){
                 res.status(400).send({"Error": err});
         }

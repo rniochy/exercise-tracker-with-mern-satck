@@ -20,4 +20,4 @@ app.use(cors());
 app.use('/user', userRouter);
 app.use('/exercise', exerciseRouter);
 
-app.listen(port, ()=> console.log(`Roudouuu!! ${port}` ));
+app.listen(port, ()=> console.log(` Roudouuu!! ${port}` )); 

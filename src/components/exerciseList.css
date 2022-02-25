@@ -1,0 +1,49 @@
+.exerciseList_content {
+     font-family: sans-serif;
+     /* display: grid;
+     place-items: center; */
+     width: 65%;
+     margin: 0 auto;
+
+}
+
+.exerciseList_table  {
+     display:  flex;
+     flex-direction: column;
+
+     margin-top: 5px;
+     width: 100%;
+}
+.exerciseList_table_head_row {
+      display: flex;
+
+      flex-direction: row;
+      justify-content: space-between;
+}
+
+.exerciseList_table_body tr {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+
+     text-align: end;
+      
+}
+.exerciseList_table_body tr td {
+      text-align: center;
+      margin-left: 30px;
+      width: 10%;
+}
+
+.exerciseList_table_body a {
+      text-decoration: none;
+      color: #000000;
+}
+.exerciseList_table_body a:hover {
+     color: #444444;
+}
+
+
+
+
+ 

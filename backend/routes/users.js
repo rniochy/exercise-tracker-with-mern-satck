@@ -3,9 +3,10 @@ import User from '../models/user.model.js'
 
 const userRouter = express.Router();
 
-userRouter.route('/').get(async (req, res)=>{
-        try {
-             const users =  await User.find({});
+userRouter.route('/users').get(async (req, res)=>{
+    const users =  await User.find({});    
+    try {
+            
              res.send({users});
 
         } catch(err){
@@ -16,16 +17,17 @@ userRouter.route('/').get(async (req, res)=>{
 userRouter.route('/add').post( async (req, res)=>{
         const {username} = req.body;
 
-        const alreadyExist = await User.findOne({username});
-        if(alreadyExist) return res.json({"Error": "Usuário já existe"});
         
         try {
+            const alreadyExist = await User.findOne({username});
+            if(alreadyExist) return res.send({"Error": "Usuário já existe"});
+        
             const user = new User({username});
             await user.save();
             res.send("User Added!");
              
         } catch(err){
-            es.status.json({"Error": err});
+               res.send({"Error": err});
         }
 
 });
